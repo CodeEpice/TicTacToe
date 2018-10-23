@@ -10,7 +10,7 @@
     "test": "jest",
     "watch": "jest --watchAll",
     "clean": "rm -rf node_modules",
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
