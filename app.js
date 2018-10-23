@@ -1,4 +1,7 @@
-// app.js
-const player = require("./ticTacToe");
+//app.js
+const app = require("./src/api");
+const PORT = process.env.PORT || 3000;
 
-console.log(player("X"));
+app.listen(PORT, () => {
+	console.log("Server running on port " + PORT);
+});

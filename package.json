@@ -23,6 +23,10 @@
   },
   "homepage": "https://github.com/CodeEpice/TicTacToe#readme",
   "devDependencies": {
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "supertest": "^3.3.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
   }
 }
