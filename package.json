@@ -1,0 +1,28 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "Late-term Assignment",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watchAll",
+    "clean": "rm -rf node_modules",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeEpice/TicTacToe.git"
+  },
+  "author": "Arna Bjorg, Birkir K, Hjortur Johann, Gretar Orn & Gudrun Margret",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodeEpice/TicTacToe/issues"
+  },
+  "homepage": "https://github.com/CodeEpice/TicTacToe#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
