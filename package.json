@@ -12,7 +12,8 @@
     "clean": "rm -rf node_modules",
     "start": "node server.js",
     "build": "webpack",
-    "flocal": "taskkill -F -IM node.exe"
+    "flocal": "taskkill -F -IM node.exe",
+    "heroku-postbuild": "webpack -p"
   },
   "repository": {
     "type": "git",
