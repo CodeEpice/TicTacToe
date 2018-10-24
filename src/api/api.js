@@ -9,13 +9,13 @@ router.get("/", (req, res) => {
 
 router.options("/", (req, res) => {
   const options = {
-    options: { get: ["/api/player", "/api/player/{SYMBOL}"] }
+    options: { get: ["/api/playerSwap", "/api/playerSwap/{SYMBOL}"] }
   };
   res.status(200).send(options);
 });
 
-router.get("/player/:symbol", (req, res) => {
-	res.status(200).send({ player: player(req.params.symbol) });
+router.get("/playerSwap/:symbol", (req, res) => {
+	res.status(200).send({symbol: player(req.params.symbol)});
 });
 
 module.exports = router;
