@@ -13,13 +13,13 @@ module.exports = {
 			title: "TicTacToe"
 			//template: "html path to client file"
 		}),
-		new CleanWebpackPlugin(['dist'])
+		new CleanWebpackPlugin(['dist/*.*'])
 	],
 	devServer: {
 		port: 3000,
 		open: true,
 		proxy: {
-			"/api": "http://localhost:3000"
+			"/api": "http://localhost:8080"
 		}
 	},
 }
