@@ -10,10 +10,11 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: "TicTacToe"
-			//template: "html path to client file"
-		}),
-		new CleanWebpackPlugin(['dist/*.*'])
+			//title: "TicTacToe"
+			template: "./src/client/template.html"
+		})
+		//,
+		//new CleanWebpackPlugin(['dist'])
 	],
 	devServer: {
 		port: 3000,
