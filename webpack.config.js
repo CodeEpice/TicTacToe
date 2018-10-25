@@ -11,7 +11,7 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			//title: "TicTacToe"
-			template: "./src/client/template.html"
+			template: "src/client/template.html"
 		})
 		//,
 		//new CleanWebpackPlugin(['dist'])
@@ -23,4 +23,12 @@ module.exports = {
 			"/api": "http://localhost:8080"
 		}
 	},
+	module: {
+		rules: [
+			{
+				test: /\.css$/,
+				use: ['css-loader']
+			}
+		]
+	}	
 }
