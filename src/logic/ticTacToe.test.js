@@ -1,5 +1,5 @@
 // ticTacToe.test.js
-const Player = require("./player");
+const player = require("./player");
 const playerSwap = require("./ticTacToe")
 
 test("Should return the given symbol", () => {
@@ -11,6 +11,12 @@ test("Should return the given symbol", () => {
 });
 
 test("Should show correct player symbol", () => {
-	let x = new Player("X");
+	let x = new player("X");
 	expect(x.getSymbol()).toBe("x");
+});
+
+test("Should return score as 1", () => {
+	let x = new player("X");
+	x.incrementScore();
+	expect(x.getScore()).toBe(1);
 });

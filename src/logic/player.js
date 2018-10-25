@@ -1,11 +1,17 @@
-class Player{
+class player{
 	constructor(symbol) {
 		this.symbol = symbol.toLowerCase();
-		var score = 0;
+		this.score = 0;
 	}
 	getSymbol(){
 		return this.symbol;
+	}	
+	incrementScore(){
+		this.score++;
+	}
+	getScore(){
+		return this.score;
 	}
 }
 
-module.exports = Player;
+module.exports = player;
