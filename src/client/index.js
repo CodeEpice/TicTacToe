@@ -1,14 +1,4 @@
-const _ = require("lodash");
 const playerSwap = require("../logic/ticTacToe.js");
-
-function component() {
-	let element = document.createElement('div');
-	element.innerHTML = _.join(['Hello', 'there!'], ' ');
-	return element;
-
-
-}
-document.body.appendChild(component());
 
 document.getElementById("myButton").onclick = function () {
         var sym = document.getElementById("symbol").innerHTML;
