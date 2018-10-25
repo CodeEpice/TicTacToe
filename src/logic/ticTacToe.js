@@ -1,4 +1,9 @@
 //ticTacToe.js
+//import board from "./board.js";
+
+//const board = new board(3,3);
+
+//const board = require("./board")
 
 function playerSwap(symbol) {
 	
@@ -9,4 +14,7 @@ function playerSwap(symbol) {
 	return "x"; 
 }
 
+
+
 module.exports = playerSwap;
+
