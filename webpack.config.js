@@ -10,16 +10,25 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: "TicTacToe"
-			//template: "html path to client file"
-		}),
-		new CleanWebpackPlugin(['dist'])
+			//title: "TicTacToe"
+			template: "src/client/template.html"
+		})
+		//,
+		//new CleanWebpackPlugin(['dist'])
 	],
 	devServer: {
 		port: 3000,
 		open: true,
 		proxy: {
-			"/api": "http://localhost:3000"
+			"/api": "http://localhost:8080"
 		}
 	},
+	module: {
+		rules: [
+			{
+				test: /\.css$/,
+				use: ['css-loader']
+			}
+		]
+	}	
 }

@@ -1,7 +1,12 @@
 //ticTacToe.js
 
-function player(symbol) {
-	return "Player: " + symbol; 
+function playerSwap(symbol) {
+	
+	if(symbol == "x") {
+		return "o";
+	}
+
+	return "x"; 
 }
 
-module.exports = player;
+module.exports = playerSwap;
