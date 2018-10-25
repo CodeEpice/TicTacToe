@@ -1,7 +1,11 @@
 // ticTacToe.test.js
 
-const player = require("./ticTacToe")
+const playerSwap = require("./ticTacToe")
 
 test("Should return the given symbol", () => {
-	expect(player("X")).toBe("Player: X");
+	expect(playerSwap("x")).toBe("o");
+});
+
+test("Should return the given symbol", () => {
+	expect(playerSwap("o")).toBe("x");
 });
