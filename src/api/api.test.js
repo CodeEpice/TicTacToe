@@ -19,8 +19,8 @@ describe("GET /api", () => {
 
 describe("GET /api/player/{SYMBOL}", () => {
   it("should return an object with the player symbol", async () => {
-    const res = await request(app).get("/api/playerSwap/O");
+    const res = await request(app).get("/api/player/O");
     expect(res.status).toBe(200);
-    expect(res.body).toHaveProperty("symbol");
+    expect(res.body).toHaveProperty("player");
   });
 });
