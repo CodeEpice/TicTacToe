@@ -13,8 +13,8 @@
     "start": "node server.js",
     "flocal": "taskkill -F -IM node.exe",
     "heroku-postbuild": "webpack -p",
-    "start-dev": "npm run flocal ; webpack ; npm start" 
-
+    "start-dev": "npm run flocal ; webpack ; npm start",
+    "fullbuild": "concurrently \"npm start\" \"webpack-dev-server\""
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,7 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
+    "concurrently": "^4.0.1",
     "express": "^4.16.4",
     "lodash": "^4.17.11"
   }
