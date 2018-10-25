@@ -13,7 +13,8 @@
     "start": "node server.js",
     "flocal": "taskkill -F -IM node.exe",
     "heroku-postbuild": "webpack -p",
-    "start-dev": "webpack-dev-server"
+    "start-dev": "npm run flocal ; webpack ; npm start" 
+
   },
   "repository": {
     "type": "git",

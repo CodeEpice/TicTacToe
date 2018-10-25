@@ -11,12 +11,13 @@ function component() {
 document.body.appendChild(component());
 
 document.getElementById("myButton").onclick = function () {
-        var sym = String(document.getElementById("symbol"));
-        fetch("/api/playerSwap" + sym)
+        var sym = document.getElementById("symbol").innerHTML;
+        console.log(sym);
+        fetch("/api/playerSwap/" + sym)
         .then((resp) => resp.json())
         .then((resp) => {
         	console.log(resp); 
-        	sym.innerHTML = resp;
+        	 document.getElementById("symbol").innerHTML = resp.symbol;
         })
     };
 //getElementByID("myButton").onclick = playerSwap(document.getElementByID("symbol"));
