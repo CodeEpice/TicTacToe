@@ -30,3 +30,9 @@ test("Should return the current game state in this instance of ticTacToe", () =>
 	expect(game.gameOver).toBe(true);
 });
 
+test("Should return true if box is checked", () => {
+	var game = new TTT();
+	game.grid.setValue(2, "x");
+
+	expect(game.isChecked(2)).toBe(true);
+});
