@@ -11,7 +11,9 @@ class TTT {
 	}
 
 	match(a, b, c) {
-      return this.grid[a] === this.grid[b] && this.grid[b] === this.grid[c];
+      if(this.grid[a] != "") {
+        return this.grid[a] === this.grid[b] && this.grid[b] === this.grid[c];
+      }
   	}
 
 	winCheck() {
@@ -25,15 +27,7 @@ class TTT {
 		else {
 			this.gameOver = false;
 		}
-
 	}
-
-  isChecked(index) {
-    if(this.grid[index] === "") {
-      return false;
-    }
-    return true;
-  }
 
 	playerSwap(symbol) {
 		if(symbol == "x") {
@@ -42,6 +36,12 @@ class TTT {
 
 		return "x"; 
 	}
+
+  reset() {
+    for(var i = 0; i < this.grid.fields.length; i++) {
+      this.grid.setValue(i, "");
+    }
+  }
 }
 
  module.exports = TTT;
