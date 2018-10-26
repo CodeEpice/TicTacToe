@@ -1,20 +1,21 @@
 //ticTacToe.js
-//import board from "./board.js";
+const Player = require('./player.js');
+const Board = require('./board.js');
 
-//const board = new board(3,3);
-
-//const board = require("./board")
-
-function playerSwap(symbol) {
-	
-	if(symbol == "x") {
-		return "o";
+class TTT {
+	constructor() {
+		this.grid = new Board();
+		this.playerX = new Player("x");
+		this.playerO = new Player("o");
 	}
 
-	return "x"; 
+	playerSwap(symbol) {
+		if(symbol == "x") {
+			return "o";
+		}
+
+		return "x"; 
+	}
 }
 
-
-
-module.exports = playerSwap;
-
+ module.exports = TTT;

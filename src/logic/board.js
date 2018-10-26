@@ -1,33 +1,23 @@
-
-
-class board {
-
-	constructor(width, height) {
-		
-		
-		var arraySize = width * height;
-		var fields = new Array(arraySize);
-		for(var i = 0; i < arraySize; i++) {
-			fields[i] = "";
-		}
-
-		this.fields = fields;
+//board.js
+class Board {
+	constructor(fields) {
+		this.fields = ["", "", "", "", "", "", "", "", ""];
 	}
 
 	setValue(index, symbol) {
-		if(board != null) {
-			board[index] = symbol;
+		if(this.fields != null || index < 9) {
+			this.fields[index] = symbol;
 			return true;
 		}
 		return false;
 	}
 
 	getValue(index) {
-		if(board != null) {
-			return board[index];
+		if(this.fields != null || index < 9) {
+			return this.fields[index];
 		}
 		//throw error
 	}
 }
 
-module.exports = board;
+module.exports = Board;

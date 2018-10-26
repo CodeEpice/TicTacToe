@@ -14,8 +14,8 @@ router.options("/", (req, res) => {
   res.status(200).send(options);
 });
 
-router.get("/playerSwap/:symbol", (req, res) => {
-	res.status(200).send({symbol: player(req.params.symbol)});
+router.get("/ticTacToe/playerSwap/:symbol", (req, res) => {
+	res.status(200).send({symbol: playerSwap(req.params.symbol)});
 });
 
 module.exports = router;
