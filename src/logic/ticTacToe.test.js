@@ -34,5 +34,12 @@ test("Should return true if box is checked", () => {
 	var game = new TTT();
 	game.grid.setValue(2, "x");
 
-	expect(game.isChecked(2)).toBe(true);
+	expect(game.grid.isChecked(2)).toBe(true);
+});
+
+test("Should return false from isChecked function when board is reset", () => {
+	var game = new TTT();
+	game.grid.setValue(2, "x");
+	game.reset();
+	expect(game.grid.isChecked(2)).toBe(false);
 });

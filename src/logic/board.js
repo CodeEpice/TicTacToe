@@ -18,6 +18,13 @@ class Board {
 		}
 		//throw error
 	}
+
+	isChecked(index) {
+	if(this.fields[index] === "") {
+	  return false;
+	}
+	return true;
+	}
 }
 
 module.exports = Board;
