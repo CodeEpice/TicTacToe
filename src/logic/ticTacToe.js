@@ -1,12 +1,13 @@
 //ticTacToe.js
-const board = require("./board");
-const player = require("./player");
+const Player = require('./player.js');
+const Board = require('./board.js');
 
-class ticTacToe{
-	constuctor(playerX, playerO){
-		this.newBoard = new board(3,3);
-		this.playerX = new player("X");
-		this.playerO = new player("O"); 
+class TTT {
+	constructor() {
+		this.grid = new Board();
+		this.playerX = new Player("x");
+		this.playerO = new Player("o");
+		this.crap = 5;
 	}
 
 	playerSwap(symbol) {
@@ -18,4 +19,4 @@ class ticTacToe{
 	}
 }
 
-module.exports = ticTacToe;
+ module.exports = TTT;

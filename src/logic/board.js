@@ -1,18 +1,11 @@
 //board.js
-class board {
-
-	constructor(width, height, fields) {
-		var arraySize = width * height;
-		var fields = new Array(arraySize);
-		for(var i = 0; i < arraySize; i++) {
-			fields[i] = "";
-		}
-
-		this.fields = fields;
+class Board {
+	constructor(fields) {
+		this.fields = ["", "", "", "", "", "", "", "", ""];
 	}
 
 	setValue(index, symbol) {
-		if(this.fields != null) {
+		if(this.fields != null || index < 9) {
 			this.fields[index] = symbol;
 			return true;
 		}
@@ -20,11 +13,11 @@ class board {
 	}
 
 	getValue(index) {
-		if(this.fields != null) {
+		if(this.fields != null || index < 9) {
 			return this.fields[index];
 		}
 		//throw error
 	}
 }
 
-module.exports = board;
+module.exports = Board;
