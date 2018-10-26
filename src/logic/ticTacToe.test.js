@@ -11,11 +11,6 @@ test("Should return the given symbol", () => {
 	expect(game.playerSwap("o")).toBe("x");
 });
 
-test("Should return the given symbol", () => {
-	var game = new TTT();
-	expect(game.crap).toBe(5);
-});
-
 test("Should return player X symbol from ticTacToe", () => {
 	var game = new TTT();
 	expect(game.playerX.score).not.toBe(undefined);

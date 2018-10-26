@@ -7,7 +7,6 @@ class TTT {
 		this.grid = new Board();
 		this.playerX = new Player("x");
 		this.playerO = new Player("o");
-		this.crap = 5;
 	}
 
 	playerSwap(symbol) {
