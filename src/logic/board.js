@@ -1,7 +1,12 @@
 //board.js
 class Board {
-	constructor(fields) {
-		this.fields = ["", "", "", "", "", "", "", "", ""];
+	constructor(width, height, fields) {
+		var arraySize = width * height;
+		var fields = [];
+		for(var i = 0; i < arraySize; i++) {
+			fields[i] = "";
+		}
+		this.fields = fields;
 	}
 
 	setValue(index, symbol) {
