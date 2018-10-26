@@ -52,9 +52,9 @@ if (condition) {
 We will be using Javascripts default naming conventions: camelCase
 
 Class
-Should have first letter lower case and the first letter in each internal word after that should be the capitalized.
+Should have first letter capitalized and the first letter in each internal word after that should be the capitalized as well.
 ```sh
-Example: ticTacToe
+Example: TicTacToe
 ```
 
 Functions
