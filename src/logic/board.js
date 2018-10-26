@@ -1,10 +1,7 @@
-
-
+//board.js
 class board {
 
-	constructor(width, height) {
-		
-		
+	constructor(width, height, fields) {
 		var arraySize = width * height;
 		var fields = new Array(arraySize);
 		for(var i = 0; i < arraySize; i++) {
@@ -15,16 +12,16 @@ class board {
 	}
 
 	setValue(index, symbol) {
-		if(board != null) {
-			board[index] = symbol;
+		if(this.fields != null) {
+			this.fields[index] = symbol;
 			return true;
 		}
 		return false;
 	}
 
 	getValue(index) {
-		if(board != null) {
-			return board[index];
+		if(this.fields != null) {
+			return this.fields[index];
 		}
 		//throw error
 	}
