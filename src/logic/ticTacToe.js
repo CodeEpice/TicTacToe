@@ -8,6 +8,8 @@ class TTT {
 		this.playerX = new Player("x");
 		this.playerO = new Player("o");
 		this.gameOver = false;
+		this.tie = false;
+		this.turnCount = 1;
 	}
 
 	match(a, b, c) {
@@ -25,7 +27,25 @@ class TTT {
 			this.gameOver = true;
 		}
 		else {
+			if(turnCount === 9) {
+				this.gameOver = true;
+				this.tie = true;
+			}
 			this.gameOver = false;
+		}
+	}
+
+	move(index) {
+		// We check to see if it's O or X's turn.
+		if(!this.grid.isChecked(index) || !gameOver) {
+			if(this.turnCount % 2 === 0) {
+				this.grid.setValue(index, this.playerO.symbol);
+			}
+			else {
+				this.grid.setValue(index, this.playerX.symbol);
+			}
+			this.turnCount++;
+			this.winCheck();
 		}
 	}
 
