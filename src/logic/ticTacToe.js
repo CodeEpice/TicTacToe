@@ -27,11 +27,10 @@ class TTT {
 			this.gameOver = true;
 		}
 		else {
-			if(this.turnCount === this.grid.fields.length) {
-				this.gameOver = true;
+			if(this.turnCount === this.grid.fields.length + 1) {
 				this.tie = true;
-			}
-			this.gameOver = false;
+				this.gameOver = true;
+			}		
 		}
 	}
 
