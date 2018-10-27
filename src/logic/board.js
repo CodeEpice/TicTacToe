@@ -1,10 +1,10 @@
 //board.js
 class Board {
-	constructor(width, height, fields) {
+	constructor(width, height) {
 		var arraySize = width * height;
 		var fields = [];
 		for(var i = 0; i < arraySize; i++) {
-			fields[i] = "";
+			fields.push("");
 		}
 		this.fields = fields;
 	}
@@ -25,10 +25,12 @@ class Board {
 	}
 
 	isChecked(index) {
-	if(this.fields[index] === "") {
-	  return false;
-	}
-	return true;
+		if(this.fields[index] === "x" || this.fields[index] === "o" ) {
+		 	return true;
+		}
+		else {
+			return false;
+		}
 	}
 }
 
