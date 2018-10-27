@@ -10,17 +10,27 @@ window.onload = function() {
 }
 
 document.getElementById("myButton").onclick = function() {
-	//reset button
+	fetch("/api/TicTacToe/reset")
+    .then((resp) => resp.json())
+    .then((resp) => {
+        console.log(resp);
+    })
+    for(var i = 0; i < boxes.length; i++) {
+        boxes[i].innerHTML = "";
+    }
+    gameOver = false;
+
 };
 
 function boxClicked(boxes) {
-	var index = this.id;
-	fetch("/api/TicTacToe/currentPlayerTurn")
-    .then((resp) => resp.json())
-    .then((resp) => {
-    	currPlayer = resp.symbol;
-    })
-    if(!gameOver) {
+	
+    if(!gameOver || this.innerHTML === "x" || this.innerHTML === "o") {
+        var index = this.id;
+        fetch("/api/TicTacToe/currentPlayerTurn")
+        .then((resp) => resp.json())
+        .then((resp) => {
+            currPlayer = resp.symbol;
+        })
         fetch("/api/TicTacToe/move/" + index)
         .then((resp) => resp.json())
         .then((resp) => {

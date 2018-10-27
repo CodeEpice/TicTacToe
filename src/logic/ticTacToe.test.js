@@ -42,6 +42,7 @@ test("Should return false from isChecked function when board is reset", () => {
 	game.grid.setValue(2, "x");
 	game.reset();
 	expect(game.grid.isChecked(2)).toBe(false);
+	expect(game.turnCount).toBe(1);
 });
 
 test("Should handle whos turn it is when a move is made", () => {
