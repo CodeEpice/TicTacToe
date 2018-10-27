@@ -13,8 +13,6 @@ module.exports = {
 			//title: "TicTacToe"
 			template: "./src/client/template.html"
 		})
-		//,
-		//new CleanWebpackPlugin(['dist'])
 	],
 	devServer: {
 		port: 3000,
