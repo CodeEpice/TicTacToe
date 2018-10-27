@@ -36,17 +36,21 @@ class TTT {
 	}
 
 	move(index) {
+    var symbol;
 		// We check to see if it's O or X's turn.
 		if(!this.grid.isChecked(index) || !gameOver) {
 			if(this.turnCount % 2 === 0) {
-				this.grid.setValue(index, this.playerO.symbol);
+        symbol = this.playerO.symbol;
+				this.grid.setValue(index, symbol);
 			}
 			else {
-				this.grid.setValue(index, this.playerX.symbol);
+        symbol = this.playerX.symbol;
+				this.grid.setValue(index, symbol);
 			}
 			this.turnCount++;
 			this.winCheck();
 		}
+    return symbol;
 	}
 
 	currentPlayerTurn() {

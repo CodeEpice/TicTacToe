@@ -20,4 +20,9 @@ router.get("/ticTacToe/currentPlayerTurn", (req, res) => {
 	res.status(200).send({ symbol: game.currentPlayerTurn() });
 });
 
+router.get("/ticTacToe/move/:index", (req, res) => {
+	res.status(200).send({ symbol: game.move(req.params.index) });
+});
+
+
 module.exports = router;
