@@ -1,5 +1,5 @@
 // player.test.js
-const Player = require('./player');
+const Player = require("./player");
 
 test("Should show correct player symbol", () => {
 	var p = new Player("X");
