@@ -4,7 +4,7 @@ const Board = require("./board.js");
 
 class TTT {
 	constructor() {
-		this.grid = new Board();
+		this.grid = new Board(3,3);
 		this.playerX = new Player("x");
 		this.playerO = new Player("o");
 		this.gameOver = false;
@@ -13,8 +13,8 @@ class TTT {
 	}
 
 	match(a, b, c) {
-      if(this.grid[a] != "") {
-        return this.grid[a] === this.grid[b] && this.grid[b] === this.grid[c];
+      if(this.grid.fields[a] === "x" || this.grid.fields[a] === "o") {
+        return this.grid.fields[a] === this.grid.fields[b] && this.grid.fields[b] === this.grid.fields[c];
       }
   	}
 
@@ -27,7 +27,7 @@ class TTT {
 			this.gameOver = true;
 		}
 		else {
-			if(turnCount === 9) {
+			if(this.turnCount === this.grid.fields.length) {
 				this.gameOver = true;
 				this.tie = true;
 			}
