@@ -28,4 +28,9 @@ router.get("/ticTacToe/gameState", (req, res) => {
 	res.status(200).send({ gameOver: game.gameOver, tie: game.tie });
 });
 
+router.get("/ticTacToe/reset", (req, res) => {
+	game.reset();
+	res.status(200).send({ gameOver: game.gameOver, tie: game.tie, turns: game.turnCount });
+});
+
 module.exports = router;

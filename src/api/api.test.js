@@ -34,14 +34,13 @@ describe("GET /api/ticTacToe/gameState", () => {
   });
 });
 
-
-
-/*
-describe("GET /api/player/{SYMBOL}", () => {
-  it("should return an object with the player symbol", async () => {
-    const res = await request(app).get("/api/ticTacToe/playerSwap/O");
+describe("GET /api/ticTacToe/reset", () => {
+  it("should return game state json object", async () => {
+    const res = await request(app).get("/api/ticTacToe/reset");
     expect(res.status).toBe(200);
-    expect(res.body).toHaveProperty("symbol");
+    expect(res.body).toHaveProperty("gameOver");
+    expect(res.body.tie).toBe(false);
+    expect(res.body.turns).toBe(1);
   });
 });
-*/
+
