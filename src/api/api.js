@@ -24,5 +24,4 @@ router.get("/ticTacToe/move/:index", (req, res) => {
 	res.status(200).send({ symbol: game.move(req.params.index) });
 });
 
-
 module.exports = router;

@@ -11,10 +11,15 @@
     "watch": "jest --watchAll",
     "clean": "rm -rf node_modules",
     "start": "node server.js",
+    "build": "webpack",
     "flocal": "taskkill -F -IM node.exe",
+<<<<<<< HEAD
     "heroku-postbuild": "webpack -p",
     "start-dev": "npm run flocal ; webpack ; npm start",
     "fullbuild": "concurrently \"npm start\" \"webpack-dev-server\""
+=======
+    "heroku-postbuild": "webpack -p"
+>>>>>>> master
   },
   "repository": {
     "type": "git",
