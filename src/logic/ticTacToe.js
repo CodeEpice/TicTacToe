@@ -49,15 +49,12 @@ class TTT {
 		}
 	}
 
-	playerSwap(symbol) {
-		if(symbol == "x") {
-			return "o";
-		}
-		else if(symbol == "o") {
-			return "x";
+	currentPlayerTurn() {
+		if(this.turnCount % 2 === 0) {
+			return this.playerO.symbol;
 		}
 		else {
-			return "Unknown symbol";
+			return this.playerX.symbol;
 		}
 	}
 
