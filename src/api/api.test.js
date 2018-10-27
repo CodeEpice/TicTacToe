@@ -24,3 +24,24 @@ describe("GET /api/ticTacToe/move/{SYMBOL}", () => {
     expect(res.body).toHaveProperty("symbol");
   });
 });
+
+describe("GET /api/ticTacToe/gameState", () => {
+  it("should return game state json object", async () => {
+    const res = await request(app).get("/api/ticTacToe/gameState");
+    expect(res.status).toBe(200);
+    expect(res.body).toHaveProperty("gameOver");
+    expect(res.body).toHaveProperty("tie");
+  });
+});
+
+
+
+/*
+describe("GET /api/player/{SYMBOL}", () => {
+  it("should return an object with the player symbol", async () => {
+    const res = await request(app).get("/api/ticTacToe/playerSwap/O");
+    expect(res.status).toBe(200);
+    expect(res.body).toHaveProperty("symbol");
+  });
+});
+*/

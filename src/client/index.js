@@ -11,6 +11,7 @@ document.getElementById("myButton").onclick = function() {
     })
 };
 
+var gameOver = false;
 var boxes = document.getElementsByTagName('td');
 
 window.onload = function() {
@@ -21,10 +22,46 @@ window.onload = function() {
 
 function boxClicked(boxes) {
 	var index = this.id;
-	fetch("/api/TicTacToe/move/" + index)
+    if(!gameOver) {
+        fetch("/api/TicTacToe/move/" + index)
+        .then((resp) => resp.json())
+        .then((resp) => {
+            console.log(resp);
+            this.innerHTML = resp.symbol;
+        })
+    }
+
+    fetch("/api/TicTacToe/gameState")
     .then((resp) => resp.json())
     .then((resp) => {
-    	console.log(resp);
-    	this.innerHTML = resp.symbol;
+        console.log(resp);
+        gameOver = resp.gameOver;
+        if(resp.gameOver) {
+            console.log("the game is over");
+            if(resp.tie) {
+                console.log("It's a tie!");
+            } 
+        }
     })
 }
+
+function isGameOver() {
+    fetch("/api/TicTacToe/gameState")
+    .then((resp) => resp.json())
+    .then((resp) => {
+        console.log(resp);
+        if(resp.gameOver) {
+            console.log("the game is over");
+            if(resp.tie) {
+                console.log("It's a tie!");
+            }
+            return true;
+        }
+        else {
+            return false;
+        }
+    })
+}
+
+
+
