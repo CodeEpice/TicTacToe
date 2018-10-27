@@ -1,7 +1,9 @@
 //src/api.js
 const express = require("express");
 const router = express.Router();
-const player = require("../logic/ticTacToe");
+const TicTacToe = require("../logic/ticTacToe");
+
+var game = new TicTacToe();
 
 router.get("/", (req, res) => {
   res.status(405).send({ error: "GET method not allowed, try OPTIONS." });
@@ -9,13 +11,17 @@ router.get("/", (req, res) => {
 
 router.options("/", (req, res) => {
   const options = {
-    options: { get: ["/api/player", "/api/player/{SYMBOL}"] }
+    options: { get: ["/api/currentPlayerTurn", "/api/currentPlayerTurn"] }
   };
   res.status(200).send(options);
 });
 
-router.get("/player/:symbol", (req, res) => {
-	res.status(200).send({ player: player(req.params.symbol) });
+router.get("/ticTacToe/currentPlayerTurn", (req, res) => {
+	res.status(200).send({ symbol: game.currentPlayerTurn() });
+});
+
+router.get("/ticTacToe/move/:index", (req, res) => {
+	res.status(200).send({ symbol: game.move(req.params.index) });
 });
 
 module.exports = router;

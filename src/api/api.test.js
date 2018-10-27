@@ -17,10 +17,10 @@ describe("GET /api", () => {
   });
 });
 
-describe("GET /api/player/{SYMBOL}", () => {
-  it("should return an object with the player symbol", async () => {
-    const res = await request(app).get("/api/player/O");
+describe("GET /api/ticTacToe/move/{SYMBOL}", () => {
+  it("should return x", async () => {
+    const res = await request(app).get("/api/ticTacToe/move/2");
     expect(res.status).toBe(200);
-    expect(res.body).toHaveProperty("player");
+    expect(res.body).toHaveProperty("symbol");
   });
 });
