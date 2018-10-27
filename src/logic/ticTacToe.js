@@ -1,6 +1,6 @@
 //ticTacToe.js
-const Player = require('./player.js');
-const Board = require('./board.js');
+const Player = require("./player.js");
+const Board = require("./board.js");
 
 class TTT {
 	constructor() {
@@ -33,8 +33,12 @@ class TTT {
 		if(symbol == "x") {
 			return "o";
 		}
-
-		return "x"; 
+		else if(symbol == "o") {
+			return "x";
+		}
+		else {
+			return "Unknown symbol";
+		}
 	}
 
   reset() {

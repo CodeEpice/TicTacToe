@@ -1,5 +1,5 @@
 // ticTacToe.test.js
-const TTT = require('./ticTacToe.js');
+const TTT = require("./ticTacToe.js");
 
 test("Should return the given symbol, o", () => {
 	var game = new TTT();

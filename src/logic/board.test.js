@@ -1,5 +1,5 @@
 //board.test.js
-const Board = require('./board');
+const Board = require("./board");
 
 test("Should fill the board with empty fields", () => {
 	var b = new Board(5, 5);
