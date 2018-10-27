@@ -1,5 +1,6 @@
 const TicTacToe = require("../logic/ticTacToe.js");
 var gameOver = false;
+var currPlayer;
 var boxes = document.getElementsByTagName('td');
 
 window.onload = function() {
@@ -14,7 +15,6 @@ document.getElementById("myButton").onclick = function() {
 
 function boxClicked(boxes) {
 	var index = this.id;
-	var currPlayer;
 	fetch("/api/TicTacToe/currentPlayerTurn")
     .then((resp) => resp.json())
     .then((resp) => {
@@ -37,9 +37,12 @@ function boxClicked(boxes) {
 	        if(resp.gameOver) {
 	            if(resp.tie) {
 	                console.log("It's a tie!");
+	                document.getElementById('GameResult').innerHTML = "It's a tie!";
 	            }
 	            else {
-	            	console.log("Player: " + currPlayer.toUpperCase() + " Won!");
+	            	console.log("Player " + currPlayer.toUpperCase() + " Won!");
+	            	document.getElementById('GameResult').innerHTML = 
+	            	"Player " + currPlayer.toUpperCase() + " Won!";
 	            }
 	        }
 	    })
