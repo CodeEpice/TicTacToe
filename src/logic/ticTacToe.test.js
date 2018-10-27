@@ -1,14 +1,15 @@
 // ticTacToe.test.js
 const TTT = require("./ticTacToe.js");
 
-test("Should return the given symbol, o", () => {
-	var game = new TTT();
-	expect(game.playerSwap("x")).toBe("o");
-});
-
 test("Should return the given symbol, x", () => {
 	var game = new TTT();
-	expect(game.playerSwap("o")).toBe("x");
+	expect(game.currentPlayerTurn()).toBe("x");
+});
+
+test("Should return the given symbol, o", () => {
+	var game = new TTT();
+	game.move(1);
+	expect(game.currentPlayerTurn()).toBe("o");
 });
 
 test("Should return player X score from ticTacToe class", () => {

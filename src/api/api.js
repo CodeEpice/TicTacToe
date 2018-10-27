@@ -11,13 +11,13 @@ router.get("/", (req, res) => {
 
 router.options("/", (req, res) => {
   const options = {
-    options: { get: ["/api/playerSwap", "/api/playerSwap/{SYMBOL}"] }
+    options: { get: ["/api/currentPlayerTurn", "/api/currentPlayerTurn"] }
   };
   res.status(200).send(options);
 });
 
-router.get("/ticTacToe/playerSwap/:symbol", (req, res) => {
-	res.status(200).send({ symbol: game.playerSwap(req.params.symbol) });
+router.get("/ticTacToe/currentPlayerTurn", (req, res) => {
+	res.status(200).send({ symbol: game.currentPlayerTurn() });
 });
 
 module.exports = router;
