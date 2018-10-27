@@ -66,3 +66,4 @@ test("Should set the win state and tie state as appropriate", () => {
 	expect(game.turnCount).toBe(6);
 	expect(game.gameOver).toBe(true);
 	expect(game.tie).toBe(false);
+});
