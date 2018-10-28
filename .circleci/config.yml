@@ -31,5 +31,18 @@ jobs:
           command: |
            git push https://heroku:47ca6be7-a4eb-40c9-a118-72029dab12ab@git.heroku.com/tictactoe-heroku.git master
 
+workflows:
+  version: 2
+  builddeploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+
+
 
 
