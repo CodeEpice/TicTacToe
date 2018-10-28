@@ -28,7 +28,7 @@ jobs:
         - checkout
         - run:
             name: Deploy Master to Heroku
-            command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+            command: git push https://heroku:47ca6be7-a4eb-40c9-a118-72029dab12ab@git.heroku.com/tictactoe-heroku.git master
 
 
 
