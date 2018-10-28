@@ -21,5 +21,9 @@ jobs:
           name: tests
           command: "npm test"
 
+      - run:
+          name: deploy-to-heroku-production
+          command: "git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_PRODUCTION_APP.git"
+
 
 
