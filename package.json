@@ -28,7 +28,6 @@
   },
   "homepage": "https://github.com/CodeEpice/TicTacToe#readme",
   "devDependencies": {
-    "clean-webpack-plugin": "^0.1.19",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^23.6.0",
     "supertest": "^3.3.0",

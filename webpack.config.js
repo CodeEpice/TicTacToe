@@ -10,7 +10,6 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			//title: "TicTacToe"
 			template: "./src/client/template.html"
 		})
 	],
