@@ -44,3 +44,12 @@ describe("GET /api/ticTacToe/reset", () => {
   });
 });
 
+describe("GET /api/ticTacToe", () => {
+  it("should return scores for both players", async () => {
+    const res = await request(app).get("/api/ticTacToe");
+    expect(res.status).toBe(200);
+    expect(res.body).toHaveProperty("xscore");
+    expect(res.body).toHaveProperty("oscore");
+  });
+});
+

@@ -39,8 +39,6 @@ function boxClicked(boxes) {
             console.log(resp);
             this.innerHTML = resp.symbol;
         })
-    
-
 	    fetch("/api/TicTacToe/gameState")
 	    .then((resp) => resp.json())
 	    .then((resp) => {
@@ -54,27 +52,23 @@ function boxClicked(boxes) {
 	            else {
 	            	console.log("Player " + currPlayer.toUpperCase() + " Won!");
 	            	gameResult.innerHTML = "Player " + currPlayer.toUpperCase() + " Won!";
+                    displayScores();
 	            }
 	        }
 	    })
 	}
 }
 
-function isGameOver() {
-    fetch("/api/TicTacToe/gameState")
+function displayScores() {
+
+    var xscore = document.getElementById('xscore');
+    var oscore = document.getElementById('oscore');
+
+    fetch("/api/TicTacToe")
     .then((resp) => resp.json())
     .then((resp) => {
-        console.log(resp);
-        if(resp.gameOver) {
-            console.log("the game is over");
-            if(resp.tie) {
-                console.log("It's a tie!");
-            }
-            return true;
-        }
-        return false;
+        xscore.innerHTML = resp.oscore;
+        oscore.innerHTML = resp.xscore;
     })
 }
-
-
 

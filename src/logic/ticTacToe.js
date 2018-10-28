@@ -19,12 +19,17 @@ class TTT {
   	}
 
 	winCheck() {
-		if( this.match(0,1,2) || this.match(3,4,5) || 
-			this.match(6,7,8) || this.match(0,3,6) || 
-			this.match(1,4,7) || this.match(2,5,8) || 
-			this.match(0,4,8) || this.match(2,4,6))
-		{
+		if( this.match(0,1,2) || this.match(3,4,5) || this.match(6,7,8) || this.match(0,3,6) || 
+			this.match(1,4,7) || this.match(2,5,8) || this.match(0,4,8) || this.match(2,4,6)) {
+
 			this.gameOver = true;
+
+      if(this.currentPlayerTurn() === "x") {
+        this.playerX.incrementScore();
+      }
+      else if(this.currentPlayerTurn() === "o") {
+        this.playerO.incrementScore();
+      }
 		}
 		else {
 			if(this.turnCount === this.grid.fields.length + 1) {
