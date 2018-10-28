@@ -36,31 +36,34 @@ function boxClicked(boxes) {
         fetch("/api/TicTacToe/move/" + index)
         .then((resp) => resp.json())
         .then((resp) => {
-            console.log(resp);
             this.innerHTML = resp.symbol;
+            console.log(resp);
         })
-	    fetch("/api/TicTacToe/gameState")
-	    .then((resp) => resp.json())
-	    .then((resp) => {
-	        console.log(resp);
-	        gameOver = resp.gameOver;
-	        if(resp.gameOver) {
-	            if(resp.tie) {
-	                console.log("It's a tie!");
-	                gameResult.innerHTML = "It's a tie!";
-	            }
-	            else {
-	            	console.log("Player " + currPlayer.toUpperCase() + " Won!");
-	            	gameResult.innerHTML = "Player " + currPlayer.toUpperCase() + " Won!";
-                    displayScores();
-	            }
-	        }
-	    })
+        checkWin();
 	}
 }
 
-function displayScores() {
+function checkWin() {
+    fetch("/api/TicTacToe/gameState")
+    .then((resp) => resp.json())
+    .then((resp) => {
+        console.log(resp);
+        gameOver = resp.gameOver;
+        if(resp.gameOver) {
+            if(resp.tie) {
+                console.log("It's a tie!");
+                gameResult.innerHTML = "It's a tie!";
+            }
+            else {
+                console.log("Player " + currPlayer.toUpperCase() + " Won!");
+                gameResult.innerHTML = "Player " + currPlayer.toUpperCase() + " Won!";
+                displayScores();
+            }
+        }
+    })
+}
 
+function displayScores() {
     var xscore = document.getElementById('xscore');
     var oscore = document.getElementById('oscore');
 
@@ -71,4 +74,3 @@ function displayScores() {
         oscore.innerHTML = resp.xscore;
     })
 }
-
