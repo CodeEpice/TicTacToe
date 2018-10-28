@@ -21,15 +21,15 @@ jobs:
           name: tests
           command: "npm test"
 
-    deploy:
-      docker:
-        - image: buildpack-deps:trusty
-      steps:
-        - checkout
-        - run: 
-            name: Deploy Master to Heroku
-            command: |
-             git push https://heroku:47ca6be7-a4eb-40c9-a118-72029dab12ab@git.heroku.com/tictactoe-heroku.git master
+  deploy:
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - checkout
+      - run: 
+          name: Deploy Master to Heroku
+          command: |
+           git push https://heroku:47ca6be7-a4eb-40c9-a118-72029dab12ab@git.heroku.com/tictactoe-heroku.git master
 
 
 
