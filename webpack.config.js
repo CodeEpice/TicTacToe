@@ -11,7 +11,8 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: "./src/client/template.html"
-		})
+		}),
+		new CleanWebpackPlugin("dist")
 	],
 	devServer: {
 		port: 3000,
