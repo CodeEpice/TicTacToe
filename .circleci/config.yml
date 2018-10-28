@@ -21,9 +21,15 @@ jobs:
           name: tests
           command: "npm test"
 
-      - run:
-          name: deploy-to-heroku-production
-          command: "git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_PRODUCTION_APP.git"
+    deploy:
+      docker:
+        - image: circleci/node:8.12.0
+      steps:
+        - checkout
+        - run:
+            name: Deploy Master to Heroku
+            command: |
+              git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 
 
 
