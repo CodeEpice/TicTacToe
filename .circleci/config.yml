@@ -16,6 +16,10 @@ jobs:
           name: update-dependencies
           command: "npm install"
 
+      - run:
+          name: build
+          command: "npm run heroku-postbuild"
+
       # run tests!
       - run:
           name: tests
