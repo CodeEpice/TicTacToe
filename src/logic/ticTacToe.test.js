@@ -29,6 +29,7 @@ test("Should return the current game state in this instance of ticTacToe", () =>
 	game.grid.setValue(2, "x");
 	game.winCheck();
 	expect(game.gameOver).toBe(true);
+	expect(game.playerX.score).toBe(1);
 });
 
 test("Should return true if box is checked", () => {
@@ -42,6 +43,7 @@ test("Should return false from isChecked function when board is reset", () => {
 	game.grid.setValue(2, "x");
 	game.reset();
 	expect(game.grid.isChecked(2)).toBe(false);
+	expect(game.turnCount).toBe(1);
 });
 
 test("Should handle whos turn it is when a move is made", () => {

@@ -24,4 +24,17 @@ router.get("/ticTacToe/move/:index", (req, res) => {
 	res.status(200).send({ symbol: game.move(req.params.index) });
 });
 
+router.get("/ticTacToe/gameState", (req, res) => {
+	res.status(200).send({ gameOver: game.gameOver, tie: game.tie });
+});
+
+router.get("/ticTacToe/reset", (req, res) => {
+	game.reset();
+	res.status(200).send({ gameOver: game.gameOver, tie: game.tie, turns: game.turnCount });
+});
+
+router.get("/ticTacToe", (req, res) => {
+	res.status(200).send({ xscore: game.playerX.score, oscore: game.playerO.score });
+});
+
 module.exports = router;
