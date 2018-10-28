@@ -2,6 +2,7 @@ const TicTacToe = require("../logic/ticTacToe.js");
 var gameOver = false;
 var currPlayer;
 var boxes = document.getElementsByTagName('td');
+var gameResult = document.getElementById('gameResult');
 
 window.onload = function() {
 	for(var i = 0; i < boxes.length; i++) {
@@ -18,13 +19,14 @@ document.getElementById("myButton").onclick = function() {
     for(var i = 0; i < boxes.length; i++) {
         boxes[i].innerHTML = "";
     }
+    gameResult.innerHTML = "";
     gameOver = false;
 
 };
 
 function boxClicked(boxes) {
 	
-    if(!gameOver || this.innerHTML === "x" || this.innerHTML === "o") {
+    if(!gameOver && this.innerHTML === "") {
         var index = this.id;
         fetch("/api/TicTacToe/currentPlayerTurn")
         .then((resp) => resp.json())
@@ -47,12 +49,11 @@ function boxClicked(boxes) {
 	        if(resp.gameOver) {
 	            if(resp.tie) {
 	                console.log("It's a tie!");
-	                document.getElementById('GameResult').innerHTML = "It's a tie!";
+	                gameResult.innerHTML = "It's a tie!";
 	            }
 	            else {
 	            	console.log("Player " + currPlayer.toUpperCase() + " Won!");
-	            	document.getElementById('GameResult').innerHTML = 
-	            	"Player " + currPlayer.toUpperCase() + " Won!";
+	            	gameResult.innerHTML = "Player " + currPlayer.toUpperCase() + " Won!";
 	            }
 	        }
 	    })
@@ -71,9 +72,7 @@ function isGameOver() {
             }
             return true;
         }
-        else {
-            return false;
-        }
+        return false;
     })
 }
 
