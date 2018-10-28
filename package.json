@@ -13,9 +13,9 @@
     "start": "node server.js",
     "build": "webpack",
     "flocal": "taskkill -F -IM node.exe",
-    "heroku-postbuild": "webpack -p",
     "start-dev": "webpack-dev-server",
-    "begin": "concurrently \"npm start\" \"webpack-dev-server\""
+    "begin": "concurrently \"npm start\" \"webpack-dev-server\"",
+    "heroku-postbuild": "webpack -p"
   },
   "repository": {
     "type": "git",
