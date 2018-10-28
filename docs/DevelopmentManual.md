@@ -17,7 +17,7 @@ Below are the software and package requirements needed to run the system
   - Heroku
 
 ### Installations
-##### NPM and NODE
+#### NPM and NODE
 JavaScript is an interpreted language, not a compiled one. There for we will use NPM to manage dependencies and NODE which gives us a JavaScript runtime. 
 
 - You can find instruction on how to install Node for windows, mac or linux here:  https://nodejs.org/en/
@@ -38,12 +38,12 @@ For source control client we use GitHub. You will need to create an account if y
 6. We recommend to read the user-manual of Git, if you are not familiar with Git here:  https://git-scm.com/docs/user-manual.html
 
 ### Deployment 
-##### Install
+#### Install
 To download the dependencies for this project you need to start with execute the following command in git bash or terminal. 
 
     $ npm install
 
-##### Test
+#### Test
 To test the program we use Jest which is a JavaScript testing framework. Jest has been installed as a development dependency for this project. 
 
 You can run our existing tests or add your own. To test the program on your local computer execute the following command in git bash or terminal. 
@@ -53,7 +53,7 @@ You can run our existing tests or add your own. To test the program on your loca
 Note that you need to be inside the root directory of the Tic Tac Toe repository.
 You can read more about Jest here: https://jestjs.io
 
-##### Build
+#### Build
 To build the program on your local computer execute the following command in git bash or terminal.
 
     $ npm run build
@@ -62,7 +62,7 @@ This command is a script that runs webpack. We use webpack to bundle our program
 
 Note that you need to be inside the root directory of the Tic Tac Toe repository.
 
-##### Run
+#### Run
 To run the program on your local computer execute the following command in git bash or terminal.
 
     $ npm start
@@ -70,21 +70,21 @@ After you have run the command, open a browser and run your localhost with port 
 
 Note that you need to be inside the root directory of the Tic Tac Toe repository.
 
-##### Development server
+#### Development server
 If you want to see changes made to static files such as CSS and HTML files, without shutting down and rebuilding, you can execute the following command in git bash or terminal. 
 
     $ npm run start-dev
 
 Note that you need to be inside the root directory of the Tic Tac Toe repository.
 
-##### Cut the connection (Windows)
+#### Cut the connection (Windows)
 Chances are that if you are using Windows you will need to execute the following command in git bash to shut down the localhost.
 
     $ npm run flocal
 
 Note that this command will kill all node.exe proccesses on your computer.
 
-##### Changes
+#### Changes
 All changes to the code, while in development, should be on a feature branch. 
 Below is step by step descriptions of the workflow after a feature branches are ready.
 
@@ -94,7 +94,7 @@ Below is step by step descriptions of the workflow after a feature branches are 
 
 
 ### Dependencies for development
-##### Circle CI
+#### Circle CI
 
 For continuous integration and delivery platform we use CircleCI. It allows us to rapidly build, test and deploy our application faster and easier.  
 
@@ -102,7 +102,7 @@ For continuous integration and delivery platform we use CircleCI. It allows us t
 2. Add the Tic Tac Toe repository to Cirlce CI as a project here: https://circleci.com/add-projects/gh/your_username_on_github
 3. Note that In the Tic Tac Toe repository we have added a folder .circleci in the root of the project, which contains a config.yml file that handles what happends when you push changes to GitHub.
 
-##### Heroku
+#### Heroku
 To deploy our app we use Heroku which is a cloud development platform. Note that our Tic Tac Toe repository has all files set up for connection on heroku. 
 
 1. Sign up on Heroku here: https://www.heroku.com

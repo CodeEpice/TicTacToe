@@ -13,7 +13,7 @@ Below are the software and package requirements needed to run the system
   - Heroku
 
 ### Installations
-##### NPM and NODE
+#### NPM and NODE
 JavaScript is an interpreted language, not a compiled one. There for we will use NPM to manage dependencies and NODE which gives us a JavaScript runtime. 
 
 - You can find instruction on how to install Node for windows, mac or linux here:  https://nodejs.org/en/
@@ -34,14 +34,14 @@ For source control client we use GitHub. You will need to create an account if y
 6. We recommend to read the user-manual of Git, if you are not familiar with Git here:  https://git-scm.com/docs/user-manual.html
 
 ### Deployment 
-##### Install
+#### Install
 To download the dependencies for this project you need to start with execute the following command in git bash or terminal. 
 
     $ npm install
 
 
 ### Dependencies for development
-##### Circle CI
+#### Circle CI
 
 For continuous integration and delivery platform we use CircleCI. It allows us to rapidly build, test and deploy our application faster and easier.  
 
@@ -49,7 +49,7 @@ For continuous integration and delivery platform we use CircleCI. It allows us t
 2. Add the Tic Tac Toe repository to Cirlce CI as a project here: https://circleci.com/add-projects/gh/your_username_on_github
 3. Note that In the Tic Tac Toe repository we have added a folder .circleci in the root of the project, which contains a config.yml file that handles what happends when you push changes to GitHub.
 
-##### Heroku
+#### Heroku
 To deploy our app we use Heroku which is a cloud development platform. Note that our Tic Tac Toe repository has all files set up for connection on heroku. 
 
 1. Sign up on Heroku here: https://www.heroku.com
