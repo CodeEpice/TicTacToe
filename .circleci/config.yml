@@ -23,12 +23,13 @@ jobs:
 
     deploy:
       docker:
-        - image: circleci/node:8.12.0
+        - image: buildpack-deps:trusty
       steps:
         - checkout
-        - run:
+        - run: 
             name: Deploy Master to Heroku
-            command: git push https://heroku:47ca6be7-a4eb-40c9-a118-72029dab12ab@git.heroku.com/tictactoe-heroku.git master
+            command: |
+             git push https://heroku:47ca6be7-a4eb-40c9-a118-72029dab12ab@git.heroku.com/tictactoe-heroku.git master
 
 
 
