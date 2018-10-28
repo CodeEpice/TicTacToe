@@ -28,9 +28,7 @@ class Board {
 		if(this.fields[index] === "x" || this.fields[index] === "o" ) {
 		 	return true;
 		}
-		else {
-			return false;
-		}
+		return false;
 	}
 }
 
